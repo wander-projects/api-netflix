@@ -1,0 +1,12 @@
+<div ng-if="status == 404" class="alert alert-danger">
+    {{ message.message }}
+</div>
+<div ng-if="detailActor">
+    <h5>Filmes estrelados por: {{ cast }}</h5>
+
+  <ul class="rel-results">
+    <li ng-repeat="movie in detailActor">
+      <a href="#" id="{{ $index + 1 }}" ng-click="update(movie)">{{ movie.show_title }}</a>, {{ movie.release_year }}
+    </li>
+  </ul>
+</div>

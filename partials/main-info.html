@@ -1,0 +1,34 @@
+<div ng-if="status == 404" class="alert alert-danger">
+    {{ message.message }}
+</div>
+<div ng-if="details">
+    <img ng-src="{{ details.poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.poster }}" class="thumbnail animated flip movie-poster">
+
+    <span class="span-outer">
+        <a href="http://www.netflix.com/WiMovie/{{ details.show_id}}" target="_blank">{{ details.show_title}}</a>
+    </span>, {{ details.release_year}}
+
+    <p><strong>Duração:</strong> ({{ details.runtime}})</p>
+
+    <p>{{ details.summary}}</p>
+
+    <p class="outer-p">
+        <div class="inner-p">
+            <span class="label label-primary">Direção :</span> {{ details.director}}
+        </div>
+        <div class="inner-p">
+            <span class="label label-primary">Elenco :</span> {{ details.show_cast}}
+        </div>
+        <div class="inner-p">
+            <span class="label label-primary">Gênero :</span> {{ details.category}}
+        </div>
+    </p>
+
+    <p class="outer-p-2">
+        <strong>Avaliação</strong>: <span class="label label-success">{{ details.rating}}</span><br>
+    </p>
+
+    <p class="outer-p-3">
+        <a ng-href="http://www.netflix.com/WiMovie/{{ details.show_id}}" target="_blank" class="btn btn-default btn-xs btn-info">Assista na Netflix!</a>
+    </p>
+</div>
